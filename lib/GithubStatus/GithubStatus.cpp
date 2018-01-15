@@ -3,7 +3,7 @@
 #include <WiFiClientSecure.h>
 
 #ifndef DEBUG
-#define DEBUG 1
+//#define DEBUG 1
 #endif
 
 bool GithubStatus::update() {
@@ -92,6 +92,8 @@ void GithubStatus::parseJSON(String data) {
     status = String("minor");
   } else if (data[12] == 'a') {
     status = String("major");
+  } else {
+    status = String("unknown");
   }
   return;
 }

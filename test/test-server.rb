@@ -22,13 +22,16 @@ class MyServer  < Sinatra::Base
     i = i+1;
     case i % 3;
     when 0
+      puts "good"
       %q[{"status":"good","body":"Everything operating normally.","created_on":"2018-01-12T21:24:07Z"}]
     when 1
+      puts "minor"
       %q[{"status":"minor","body":"Everything operating normally.","created_on":"2018-01-12T21:24:07Z"}]
     when 2
+      puts "magor"
       %q[{"status":"major","body":"Everything operating normally.","created_on":"2018-01-12T21:24:07Z"}]
     end
-    end
+  end
 end
 
 Rack::Handler::WEBrick.run MyServer, webrick_options
